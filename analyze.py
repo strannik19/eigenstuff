@@ -64,6 +64,7 @@ for i, j, q in qs:
         f = open('cache.tsv', 'a')
         f.write('%s\t%d\n' % (q, n))
         f.close()
+        time.sleep(2)
     m[j][i] += n
 
 def plot_mat(m, items, cm, fn, fmt, dir_text=None):
