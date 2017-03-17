@@ -12,7 +12,7 @@ def get_n_results_dumb(q):
                      params={'q': q,
                              "tbs": "li:1"})
     r.raise_for_status()
-    soup = bs4.BeautifulSoup(r.text)
+    soup = bs4.BeautifulSoup(r.text, "html.parser")
     s = soup.find('div', {'id': 'resultStats'}).text
     if not s:
         return 0
